@@ -24,13 +24,13 @@ function App() {
     //   .then((data) => setStudents(data));
 
     // async await
-    const fetchData = async () => {
-      const response = await fetch(`${API_URL}/students`);
+    const fetchData = async (url) => {
+      const response = await fetch(url);
       const data = await response.json();
-      setStudents(data);
+      return data;
     };
 
-    fetchData();
+    fetchData(`${API_URL}/students`).then((data) => setStudents(data));
   }, []);
 
   const createStudent = (student) => {
