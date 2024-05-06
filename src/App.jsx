@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import studentsData from "./studentsData";
+import studentsData from "../studentsData";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
