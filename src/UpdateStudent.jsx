@@ -5,7 +5,7 @@ export default function AddStudent({ students, setStudents }) {
   const { studentId } = useParams();
 
   // find student using .find()
-  const student = students.find((student) => student.id === studentId);
+  const student = students.find((student) => student._id === studentId);
   // if student is not found, redirect to students list
   if (!student) return <Navigate to="/students" />;
 
@@ -43,7 +43,7 @@ export default function AddStudent({ students, setStudents }) {
     }
 
     const updatedStudents = students.map((student) => {
-      if (student.id === studentId) {
+      if (student._id === studentId) {
         return { id: studentId, name, img: imgURL, age, bootcamp };
       }
       return student;

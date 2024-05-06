@@ -6,10 +6,10 @@ export default function SingleStudent({ students }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   // find student using .find()
-  const student = students.find((student) => student.id === studentId);
+  const student = students.find((student) => student._id === studentId);
 
   // find student using .filter()
-  // const student = students.filter((student) => student.id === studentId)[0];
+  // const student = students.filter((student) => student._id === studentId)[0];
 
   if (!student) {
     return <Navigate to="/students" />;
@@ -32,8 +32,8 @@ export default function SingleStudent({ students }) {
           style={{ borderRadius: "50%" }}
         />
         <h2>{student.name}</h2>
-        {showAge === "true" && <p>{student.age} anos</p>}
-        {showBootcamp === "true" && <p>{student.bootcamp}</p>}
+        <p>{student.age} anos</p>
+        <p>{student.bootcamp}</p>
       </div>
     </div>
   );
